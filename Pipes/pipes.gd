@@ -6,6 +6,7 @@ const SCROLL_SPEED = 120.0
 @onready var upper = $Upper
 @onready var lower = $Lower
 @onready var laser = $Laser
+@onready var score_sound = $ScoreSound
 
 
 func _ready():
@@ -23,6 +24,10 @@ func on_screen_exited():
 	queue_free()
 
 
+func player_scored():
+	score_sound.play()
+	GameManager.increment_score()
+
 func on_pipe_body_entered(body: Node2D):
 	if body.is_in_group(GameManager.GROUP_PLANE):
 		body.die()
@@ -30,5 +35,5 @@ func on_pipe_body_entered(body: Node2D):
 
 func on_laser_body_entered(body: Node2D):
 	if body.is_in_group(GameManager.GROUP_PLANE):
-		GameManager.increment_score()
+		player_scored()
 	

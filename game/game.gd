@@ -7,6 +7,8 @@ extends Node2D
 @onready var spawn_u = $SpawnU
 @onready var spawn_l = $SpawnL
 @onready var game_over = $CanvasLayer/GameOver
+@onready var engine_sound = $EngineSound
+@onready var game_over_sound = $GameOverSound
 
 func _ready():
 	GameManager.on_game_over.connect(on_game_over)
@@ -34,3 +36,5 @@ func on_timer_timeout():
 
 func on_game_over():
 	stop_pipes()
+	engine_sound.stop()
+	game_over_sound.play()
