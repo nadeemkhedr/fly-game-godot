@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://qr0fjom2kiip"]
+[gd_scene load_steps=7 format=3 uid="uid://qr0fjom2kiip"]
 
 [ext_resource type="Texture2D" uid="uid://d1782otnvn13t" path="res://assets/background/rocks_2.png" id="1_7mnmd"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_n8wr4"]
 [ext_resource type="PackedScene" uid="uid://bur2ndvhccgks" path="res://plane_cb/plane_cb.tscn" id="2_t62o8"]
 [ext_resource type="PackedScene" uid="uid://bn46j0702gh50" path="res://Pipes/pipes.tscn" id="3_2yp5c"]
+[ext_resource type="PackedScene" uid="uid://bwaot7q1y2lo" path="res://game_over/game_over.tscn" id="5_gjtnv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11epj"]
 size = Vector2(492, 20)
@@ -37,3 +38,8 @@ position = Vector2(530, 540)
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 1.2
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("5_gjtnv")]
+visible = false

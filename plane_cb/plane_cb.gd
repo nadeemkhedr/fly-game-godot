@@ -3,6 +3,9 @@ extends CharacterBody2D
 const GRAVITY = 1900.0
 const POWER = -400.0
 
+
+var dead = false
+
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
 	fly()
@@ -18,5 +21,9 @@ func fly():
 
 
 func die():
+	if dead:
+		return
+	dead = true
 	$AnimatedSprite2D.stop()
+	GameManager.on_game_over.emit()
 	set_physics_process(false)

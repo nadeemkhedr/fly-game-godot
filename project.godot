@@ -11,7 +11,12 @@ config_version=5
 [application]
 
 config/name="tappy-plane"
+run/main_scene="res://main/main.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
+
+[autoload]
+
+GameManager="*res://singletons/game_manager.gd"
 
 [display]
 
