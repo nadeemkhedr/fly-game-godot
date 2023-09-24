@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://qr0fjom2kiip"]
 
-[ext_resource type="Texture2D" uid="uid://d1782otnvn13t" path="res://assets/background/rocks_2.png" id="1_7mnmd"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_n8wr4"]
 [ext_resource type="PackedScene" uid="uid://bur2ndvhccgks" path="res://plane_cb/plane_cb.tscn" id="2_t62o8"]
+[ext_resource type="PackedScene" uid="uid://d1hjst67il8gg" path="res://scrolling_bg/scrolling_bg.tscn" id="3_0o0c6"]
 [ext_resource type="PackedScene" uid="uid://bn46j0702gh50" path="res://Pipes/pipes.tscn" id="3_2yp5c"]
 [ext_resource type="PackedScene" uid="uid://bwaot7q1y2lo" path="res://game_over/game_over.tscn" id="5_gjtnv"]
 [ext_resource type="AudioStream" uid="uid://b0tinvmq22170" path="res://assets/audio/engine.mp3" id="6_6bdvp"]
@@ -16,9 +16,7 @@ size = Vector2(492, 20)
 script = ExtResource("1_n8wr4")
 pipes_scene = ExtResource("3_2yp5c")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(77, 400)
-texture = ExtResource("1_7mnmd")
+[node name="ScrollingBg" parent="." instance=ExtResource("3_0o0c6")]
 
 [node name="PlaneCB" parent="." instance=ExtResource("2_t62o8")]
 position = Vector2(112, 462)
